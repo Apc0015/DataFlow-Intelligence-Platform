@@ -1,36 +1,36 @@
-# 📊 Interactive Flight Route & Analytics Dashboard
+# 🚀 DataFlow Intelligence Platform
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/Apc0015/Fligth_Route_Dashboard_Project)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/Apc0015/DataFlow-Intelligence-Platform)
 
-> **A comprehensive multi-dashboard application for visual analytics and data communication, featuring flight route analysis, university performance monitoring, and data visualization best practices comparison.**
+> **Advanced Analytics for Strategic Decision Making - A comprehensive multi-domain intelligence platform transforming complex data into actionable business insights across transportation, education, and visualization excellence.**
 
-## 🌟 Project Overview
+## 🌟 Platform Overview
 
-This project is a sophisticated **Streamlit-based web application** that demonstrates advanced data visualization and analytics capabilities through three interconnected dashboards. Built as part of a Visual Analytics and Communication course, it showcases real-world applications of data science techniques in aviation, education, and visualization design.
+DataFlow Intelligence Platform is a sophisticated **enterprise-grade analytics ecosystem** that demonstrates advanced data visualization and business intelligence capabilities through three specialized intelligence modules. This comprehensive platform showcases real-world applications of strategic analytics in transportation optimization, educational performance monitoring, and data visualization excellence.
 
-### 🎯 Key Objectives
-- **Flight Operations Analysis**: Interactive mapping and analysis of major U.S. airport routes
-- **Educational Analytics**: University admissions, retention, and satisfaction monitoring
-- **Visualization Excellence**: Comparative analysis of effective vs. poor data visualization techniques
+### 🎯 Intelligence Modules
+- **Transportation Intelligence**: Strategic route optimization and competitive analysis for aviation industry
+- **Education Intelligence**: Institutional performance analytics and student success optimization
+- **Visualization Intelligence**: Data storytelling excellence and communication best practices
 
-## 🚀 Live Demo & Features
+## 🚀 Live Platform & Intelligence Modules
 
-### 📈 Dashboard 1: Airport Flight Route Analysis
+### ✈️ Module 1: Transportation Intelligence
 - **Interactive Route Mapping**: Dynamic visualization of flight paths from major East Coast airports
 - **Operational Insights**: Analysis of flight volume, timing patterns, and airline distributions
 - **Geographic Intelligence**: Regional connectivity analysis with domestic vs. international breakdowns
 - **Data Coverage**: JFK, ATL, MIA, BOS, PHL airports with comprehensive route networks
 
-### 🎓 Dashboard 2: University Performance Monitor
-- **Admissions Analytics**: Track applications, acceptance rates, and enrollment trends over time
-- **Retention Monitoring**: Student satisfaction and retention rate analysis
-- **Departmental Insights**: Engineering, Business, Arts, and Science program comparisons
-- **Temporal Analysis**: Multi-year trend identification with seasonal pattern recognition
+### 🎓 Module 2: Education Intelligence
+- **Strategic Enrollment Analytics**: Advanced forecasting and trend analysis for institutional growth
+- **Student Success Optimization**: Retention and satisfaction analytics for performance improvement
+- **Program Performance Intelligence**: Multi-departmental analysis and resource allocation insights
+- **Predictive Analytics**: Multi-year trend modeling and strategic planning capabilities
 
-### 📊 Dashboard 3: Data Visualization Mastery
+### 📊 Module 3: Visualization Intelligence
 - **Best Practices Demonstration**: Side-by-side comparison of poor vs. excellent visualization techniques
 - **Statistical Analysis**: Correlation analysis between GDP per capita and happiness scores
 - **Regional Patterns**: World Happiness Report 2022 data with advanced insights
@@ -62,10 +62,10 @@ Scikit-learn           # Machine learning and regression analysis
 - **Responsive Design**: Mobile-friendly interface with custom CSS
 - **Performance Optimization**: Cached data loading and efficient rendering
 
-## 📁 Project Structure
+## 📁 Platform Architecture
 
 ```
-Flight-Route-Dashboard/
+DataFlow-Intelligence-Platform/
 ├── src/
 │   ├── app.py                    # Main Streamlit application
 │   ├── components/
@@ -135,16 +135,16 @@ Flight-Route-Dashboard/
 
 ### **For Data Professionals**
 - **Best Practices**: Clear examples of effective visualization techniques
-- **Skills Demonstration**: Advanced analytics and dashboard development
-- **Portfolio Showcase**: Professional-grade data science application
+- **Skills Demonstration**: Advanced analytics and platform development
+- **Intelligence Showcase**: Enterprise-grade data science platform
 
 ## 🚀 Getting Started
 
 ### **Quick Start**
 ```bash
 # Clone the repository
-git clone https://github.com/Apc0015/Fligth_Route_Dashboard_Project.git
-cd Flight-Route-Dashboard
+git clone https://github.com/Apc0015/DataFlow-Intelligence-Platform.git
+cd DataFlow-Intelligence-Platform
 
 # Install dependencies
 pip install -r requirements.txt

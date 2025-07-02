@@ -1,4 +1,4 @@
-# 🛠️ Development Setup Guide
+# 🛠️ Development Setup Guide - DataFlow Intelligence Platform
 
 ## Table of Contents
 1. [Development Environment](#development-environment)
@@ -61,8 +61,8 @@ conda install pip
 #### 1. Clone the Repository
 ```bash
 # Clone from GitHub
-git clone https://github.com/Apc0015/Fligth_Route_Dashboard_Project.git
-cd Flight-Route-Dashboard
+git clone https://github.com/Apc0015/DataFlow-Intelligence-Platform.git
+cd DataFlow-Intelligence-Platform
 
 # Verify project structure
 ls -la

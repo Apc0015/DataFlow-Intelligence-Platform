@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for Flight Route Dashboard
+# Multi-stage Dockerfile for DataFlow Intelligence Platform
 
 # Stage 1: Build stage
 FROM python:3.11-slim as builder

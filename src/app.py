@@ -14,7 +14,7 @@ from matplotlib.figure import Figure
 
 # Set page configuration
 st.set_page_config(
-    page_title="Ayush Chhoker - Data Analytics Portfolio",
+    page_title="DataFlow Intelligence Platform | Ayush Chhoker",
     page_icon="🚀",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -148,13 +148,13 @@ st.sidebar.markdown("""
 # Portfolio Overview Page
 if page == "Portfolio Overview":
     # Hero Section
-    st.markdown('<div class="hero-header">Data Analytics Portfolio</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-header">DataFlow Intelligence Platform</div>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("""
         <div style="text-align: center; font-size: 1.3rem; color: #4A5568; margin-bottom: 2rem;">
-            Transforming Complex Data into Strategic Business Insights
+            Advanced Analytics for Strategic Decision Making
         </div>
         """, unsafe_allow_html=True)
 
@@ -163,19 +163,20 @@ if page == "Portfolio Overview":
     <div class="portfolio-card">
         <h2>🎯 About My Analytics Journey</h2>
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            I'm a passionate data analytics professional who believes in the power of data to drive strategic business decisions. 
-            This portfolio showcases my expertise in building end-to-end analytics solutions that deliver measurable business value.
+            DataFlow Intelligence Platform represents my expertise in building comprehensive analytics ecosystems that transform 
+            raw data into strategic business intelligence. This platform demonstrates advanced capabilities in multi-domain 
+            analytics, from transportation optimization to educational insights and visualization excellence.
         </p>
         
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            <strong>My Mission:</strong> To bridge the gap between complex data and actionable business insights through 
-            innovative visualization, statistical analysis, and strategic thinking.
+            <strong>Platform Mission:</strong> To democratize advanced analytics through intuitive interfaces that enable 
+            data-driven decision making across industries, combining statistical rigor with compelling data storytelling.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
     # Key Metrics
-    st.markdown("### 📊 Portfolio Impact Metrics")
+    st.markdown("### 📊 Platform Impact Metrics")
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
@@ -210,8 +211,8 @@ if page == "Portfolio Overview":
         </div>
         """, unsafe_allow_html=True)
 
-    # Project Showcase
-    st.markdown("### 🚀 Featured Analytics Projects")
+    # Platform Modules
+    st.markdown("### 🚀 DataFlow Intelligence Modules")
     
     # Transportation Analytics Project
     st.markdown("""

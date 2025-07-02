@@ -1,4 +1,4 @@
-# 📋 User Guide - Flight Route Analytics Dashboard
+# 📋 User Guide - DataFlow Intelligence Platform
 
 ## Table of Contents
 1. [Getting Started](#getting-started)
@@ -18,8 +18,8 @@
 ### Installation Steps
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Apc0015/Fligth_Route_Dashboard_Project.git
-   cd Flight-Route-Dashboard
+   git clone https://github.com/Apc0015/DataFlow-Intelligence-Platform.git
+   cd DataFlow-Intelligence-Platform
    ```
 
 2. **Install Dependencies**

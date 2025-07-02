@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  # Main dashboard application
-  dashboard:
+  # Main intelligence platform application
+  dataflow-platform:
     build:
       context: ..
       dockerfile: deployment/Dockerfile
-    container_name: flight_dashboard
+    container_name: dataflow_intelligence_platform
     ports:
       - "8501:8501"
     environment:
@@ -30,8 +30,8 @@ services:
       - dashboard_network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.dashboard.rule=Host(`dashboard.local`)"
-      - "traefik.http.services.dashboard.loadbalancer.server.port=8501"
+      - "traefik.http.routers.dataflow.rule=Host(`dataflow.local`)"
+      - "traefik.http.services.dataflow.loadbalancer.server.port=8501"
 
   # Optional: Reverse proxy for SSL termination and load balancing
   reverse-proxy:
