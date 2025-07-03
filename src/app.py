@@ -20,123 +20,131 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Enhanced professional styling
+# Professional light styling
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     .main {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #e3f2fd;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     }
     
     .hero-header {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: #1E88E5;
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: #475569;
         text-align: center;
+        letter-spacing: -0.025em;
     }
     
     .main-header {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
         font-weight: 600;
         margin-bottom: 2rem;
-        color: #1E88E5;
+        color: #475569;
+        letter-spacing: -0.025em;
     }
     
     .sub-header {
-        font-size: 1.8rem;
+        font-size: 1.875rem;
         font-weight: 500;
         margin-top: 2rem;
         margin-bottom: 1rem;
-        color: #0D47A1;
+        color: #64748b;
     }
     
     .highlight {
-        color: #D81B60;
+        color: #0ea5e9;
         font-weight: 600;
     }
     
     .portfolio-card {
-        background-color: #ffffff;
-        padding: 2rem;
-        border-radius: 10px;
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 16px;
         margin: 2rem 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e0e0e0;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease;
     }
     
     .portfolio-card:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        border-color: #cbd5e1;
     }
     
     .metric-card {
-        background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 10px;
+        padding: 2rem;
+        border-radius: 16px;
         text-align: center;
         margin: 1rem 0;
-        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3);
+        box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
+        transition: all 0.2s ease;
     }
     
     .metric-card:hover {
-        box-shadow: 0 6px 12px rgba(30, 136, 229, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 12px -3px rgba(14, 165, 233, 0.4);
     }
     
     .insight-box {
-        background-color: #e3f2fd;
-        padding: 1.5rem;
-        border-radius: 10px;
+        background: #f0f9ff;
+        padding: 2rem;
+        border-radius: 12px;
         margin: 1.5rem 0;
-        border-left: 5px solid #1E88E5;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #0ea5e9;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     }
     
     .value-prop {
-        background-color: #f3e5f5;
-        padding: 1.5rem;
-        border-radius: 10px;
+        background: #fefce8;
+        padding: 2rem;
+        border-radius: 12px;
         margin: 1.5rem 0;
-        border-left: 5px solid #D81B60;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #eab308;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
     }
     
     .cta-button {
-        background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
         color: white;
-        padding: 12px 24px;
-        border-radius: 5px;
+        padding: 14px 28px;
+        border-radius: 8px;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 500;
         display: inline-block;
-        margin: 10px 5px;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(30, 136, 229, 0.3);
+        margin: 8px 6px;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.25);
+        font-size: 0.95rem;
     }
     
     .cta-button:hover {
-        background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
-        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
+        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 10px -2px rgba(14, 165, 233, 0.35);
     }
     
     .nav-header {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: 600;
-        color: #1E88E5;
+        color: #475569;
         margin-bottom: 1.5rem;
         text-align: center;
     }
     
     .personal-brand {
-        background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 10px;
+        padding: 2rem;
+        border-radius: 16px;
         text-align: center;
         margin: 1rem 0;
-        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3);
+        box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
     }
 </style>
 """, unsafe_allow_html=True)
