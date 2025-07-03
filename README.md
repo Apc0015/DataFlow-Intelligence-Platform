@@ -212,7 +212,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Ayush Chhoker**
 - 📧 Email: [Ayushchhoker15@gmail.com]
 - 💼 LinkedIn: [https://www.linkedin.com/in/apc15/]
-- 🐙 GitHub: [@Apc0015](https://github.com/Apc0015)
+- 🐙 GitHub: [@Apc0015](https://github.com/Apc0015/DataFlow-Intelligence-Platform)
 
 ## 🙏 Acknowledgments
 
