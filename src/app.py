@@ -23,141 +23,120 @@ st.set_page_config(
 # Enhanced professional styling
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;600;700&display=swap');
     
     .main {
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e3f2fd;
     }
     
     .hero-header {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 700;
         margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #1E88E5;
         text-align: center;
-        text-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
     .main-header {
-        font-size: 3.2rem;
+        font-size: 2.5rem;
         font-weight: 600;
         margin-bottom: 2rem;
-        background: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        color: #1E88E5;
     }
     
     .sub-header {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         font-weight: 500;
         margin-top: 2rem;
         margin-bottom: 1rem;
-        color: #1E3A8A;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        color: #0D47A1;
     }
     
     .highlight {
-        color: #059669;
+        color: #D81B60;
         font-weight: 600;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
     
     .portfolio-card {
-        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-        padding: 2.5rem;
-        border-radius: 20px;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 10px;
         margin: 2rem 0;
-        box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
-        border: 1px solid rgba(30, 58, 138, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
     }
     
     .portfolio-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 25px 50px rgba(30, 58, 138, 0.15);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
     
     .metric-card {
-        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
+        background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
         color: white;
-        padding: 2rem;
-        border-radius: 15px;
+        padding: 1.5rem;
+        border-radius: 10px;
         text-align: center;
         margin: 1rem 0;
-        box-shadow: 0 15px 35px rgba(30, 58, 138, 0.3);
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3);
     }
     
     .metric-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 20px 45px rgba(30, 58, 138, 0.4);
+        box-shadow: 0 6px 12px rgba(30, 136, 229, 0.4);
     }
     
     .insight-box {
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-        padding: 2rem;
-        border-radius: 15px;
-        margin: 2rem 0;
-        border-left: 6px solid #1E3A8A;
-        box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
-        transition: transform 0.2s ease;
-    }
-    
-    .insight-box:hover {
-        transform: translateX(5px);
+        background-color: #e3f2fd;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        border-left: 5px solid #1E88E5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
     .value-prop {
-        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-        padding: 2rem;
-        border-radius: 15px;
-        margin: 2rem 0;
-        border-left: 6px solid #059669;
-        box-shadow: 0 10px 25px rgba(5, 150, 105, 0.1);
+        background-color: #f3e5f5;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        border-left: 5px solid #D81B60;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
     .cta-button {
-        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
+        background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
         color: white;
-        padding: 15px 30px;
-        border-radius: 30px;
+        padding: 12px 24px;
+        border-radius: 5px;
         text-decoration: none;
         font-weight: 600;
         display: inline-block;
-        margin: 15px 8px;
+        margin: 10px 5px;
         transition: all 0.3s ease;
-        box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        box-shadow: 0 2px 4px rgba(30, 136, 229, 0.3);
     }
     
     .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(30, 58, 138, 0.4);
-        background: linear-gradient(135deg, #1D4ED8 0%, #10B981 100%);
+        background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
     }
     
     .nav-header {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         font-weight: 600;
-        color: #1E3A8A;
+        color: #1E88E5;
         margin-bottom: 1.5rem;
         text-align: center;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
     
     .personal-brand {
-        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
+        background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);
         color: white;
         padding: 1.5rem;
-        border-radius: 15px;
+        border-radius: 10px;
         text-align: center;
         margin: 1rem 0;
-        box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3);
     }
 </style>
 """, unsafe_allow_html=True)
