@@ -315,6 +315,25 @@ if page == "🏠 Portfolio Overview":
         </div>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Project Links
+    st.markdown("### 🔗 Project Resources")
+    col1, col2, col3 = st.columns([1, 1, 1])
+    
+    with col2:
+        st.markdown("""
+        <div style="text-align: center; margin: 2rem 0;">
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
+                Explore the live application and technical implementation
+            </p>
+            <a href="https://dataflow-intelligence-platformgit-abnunhzst7htqqrrgffm2a.streamlit.app/" target="_blank" class="cta-button" style="margin: 0 5px;">
+                Live Application
+            </a>
+            <a href="https://github.com/Apc0015/DataFlow-Intelligence-Platform" target="_blank" class="cta-button" style="margin: 0 5px;">
+                View Source Code
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
 
 # Transportation Intelligence Hub
 elif page == "✈️ Transportation Analytics":
@@ -759,88 +778,34 @@ elif page == "✈️ Transportation Analytics":
     with st.expander("📋 Executive Strategic Analysis", expanded=False):
         st.markdown("# Transportation Analytics: Strategic Business Intelligence")
         st.markdown("## Executive Summary")
+        st.markdown("""
+        This comprehensive analysis delivers actionable intelligence for aviation industry decision-makers, 
+        focusing on route optimization, competitive positioning, and operational excellence. The insights 
+        enable strategic planning for market expansion, resource allocation, and revenue maximization.
         
-        # Calculate key metrics for dynamic insights
-        total_routes = len(airport_data)
-        domestic_percentage = (airport_data['domestic'].sum() / total_routes) * 100
-        international_percentage = 100 - domestic_percentage
-        top_carriers = airport_data['airline'].value_counts().head(3)
-        busiest_airports = airport_data['airport'].value_counts().head(3)
-        
-        st.markdown(f"""
-        **Current Network Analysis:** This transportation network encompasses **{total_routes:,} active routes** with a 
-        **{domestic_percentage:.1f}% domestic** and **{international_percentage:.1f}% international** split, indicating 
-        {'a domestically-focused strategy' if domestic_percentage > 60 else 'a balanced market approach' if abs(domestic_percentage - 50) < 10 else 'an internationally-focused strategy'}.
-        
-        **Market Leadership:** The top three carriers ({top_carriers.index[0]}, {top_carriers.index[1]}, {top_carriers.index[2]}) 
-        control **{((top_carriers.iloc[0] + top_carriers.iloc[1] + top_carriers.iloc[2]) / total_routes * 100):.1f}%** of total routes, 
-        suggesting {'high market concentration' if ((top_carriers.iloc[0] + top_carriers.iloc[1] + top_carriers.iloc[2]) / total_routes * 100) > 50 else 'moderate market fragmentation'}.
-        
-        **Hub Concentration:** Primary hubs ({busiest_airports.index[0]}, {busiest_airports.index[1]}, {busiest_airports.index[2]}) 
-        handle **{((busiest_airports.iloc[0] + busiest_airports.iloc[1] + busiest_airports.iloc[2]) / total_routes * 100):.1f}%** of traffic, 
-        indicating {'centralized hub dependency' if ((busiest_airports.iloc[0] + busiest_airports.iloc[1] + busiest_airports.iloc[2]) / total_routes * 100) > 40 else 'distributed network structure'}.
+        **Key Strategic Value:**
+        - Route network optimization for maximum ROI
+        - Competitive intelligence for market positioning  
+        - Operational efficiency insights for cost reduction
+        - Market expansion opportunities identification
         """)
         
         st.markdown("## Strategic Intelligence Findings")
-        
-        # Dynamic insights based on actual data
-        peak_hour_data = airport_data['hour'].value_counts()
-        peak_hour = peak_hour_data.index[0]
-        peak_hour_percentage = (peak_hour_data.iloc[0] / total_routes) * 100
-        
-        morning_flights = airport_data[airport_data['hour'].between(6, 11)].shape[0]
-        afternoon_flights = airport_data[airport_data['hour'].between(12, 17)].shape[0]
-        evening_flights = airport_data[airport_data['hour'].between(18, 23)].shape[0]
-        
-        st.markdown(f"""
-        ### 📊 Operational Timing Intelligence
-        **Peak Operations:** Hour {peak_hour}:00 represents the highest traffic volume at **{peak_hour_percentage:.1f}%** of daily operations. 
-        This concentration suggests {'significant operational pressure requiring additional resources' if peak_hour_percentage > 8 else 'manageable peak demand distribution'}.
-        
-        **Daily Distribution Strategy:**
-        - Morning Operations (6-11 AM): **{(morning_flights/total_routes)*100:.1f}%** - {'Optimal for business travelers' if (morning_flights/total_routes)*100 > 30 else 'Underutilized morning capacity'}
-        - Afternoon Operations (12-5 PM): **{(afternoon_flights/total_routes)*100:.1f}%** - {'Peak productivity window' if (afternoon_flights/total_routes)*100 > 25 else 'Moderate afternoon utilization'}
-        - Evening Operations (6-11 PM): **{(evening_flights/total_routes)*100:.1f}%** - {'Strong leisure/return travel' if (evening_flights/total_routes)*100 > 20 else 'Limited evening services'}
-        """)
-        
-        # Competitive analysis insights
-        market_leader = top_carriers.index[0]
-        market_leader_share = (top_carriers.iloc[0] / total_routes) * 100
-        
-        # Calculate domestic vs international split for top carrier
-        leader_domestic = airport_data[(airport_data['airline'] == market_leader) & (airport_data['domestic'] == True)].shape[0]
-        leader_international = airport_data[(airport_data['airline'] == market_leader) & (airport_data['domestic'] == False)].shape[0]
-        leader_total = leader_domestic + leader_international
-        
-        st.markdown(f"""
-        ### 🏆 Competitive Market Intelligence
-        **Market Leader Analysis:** {market_leader} dominates with **{market_leader_share:.1f}%** market share 
-        (**{leader_total:,} routes**), operating **{(leader_domestic/leader_total)*100:.1f}%** domestic and 
-        **{(leader_international/leader_total)*100:.1f}%** international routes.
-        
-        **Strategic Positioning:**
-        - {market_leader} demonstrates {'domestic market focus' if (leader_domestic/leader_total) > 0.6 else 'international expansion strategy' if (leader_international/leader_total) > 0.6 else 'balanced portfolio approach'}
-        - Market concentration risk: {'HIGH' if market_leader_share > 25 else 'MODERATE' if market_leader_share > 15 else 'LOW'} 
-          - Single carrier dependency could impact {'pricing power and route availability' if market_leader_share > 25 else 'competitive dynamics' if market_leader_share > 15 else 'market stability minimally'}
-        """)
-        
-        # Route efficiency insights
-        unique_airports = airport_data['airport'].nunique()
-        routes_per_airport = total_routes / unique_airports
-        
-        st.markdown(f"""
-        ### 🛫 Network Efficiency Intelligence
-        **Hub Utilization:** **{unique_airports}** airports serve **{total_routes:,}** routes, averaging 
-        **{routes_per_airport:.1f}** routes per airport. This indicates {'efficient hub utilization' if routes_per_airport > 15 else 'distributed network with potential consolidation opportunities' if routes_per_airport > 8 else 'highly distributed network structure'}.
-        
-        **Expansion Opportunities:**
-        - Underserved time slots: {'Limited late-night operations present expansion opportunities' if evening_flights < morning_flights else 'Balanced temporal distribution suggests optimized scheduling'}
-        - Market gaps: {'Secondary airports may offer growth potential' if routes_per_airport < 10 else 'Primary hubs show strong utilization'}
-        
-        **Risk Assessment:**
-        - Hub concentration risk: {'HIGH' if ((busiest_airports.iloc[0] + busiest_airports.iloc[1]) / total_routes * 100) > 30 else 'MODERATE' if ((busiest_airports.iloc[0] + busiest_airports.iloc[1]) / total_routes * 100) > 20 else 'LOW'}
-        - Temporal concentration risk: {'HIGH' if peak_hour_percentage > 10 else 'MODERATE' if peak_hour_percentage > 7 else 'LOW'}
-        - Carrier dependency risk: {'HIGH' if market_leader_share > 25 else 'MODERATE' if market_leader_share > 15 else 'LOW'}
+        st.markdown("""
+        1. **Network Strategic Value**: Comprehensive route portfolio demonstrates strong market positioning with 
+           balanced domestic revenue streams and international growth vectors for sustained competitive advantage.
+           
+        2. **High-Value Market Opportunities**: Top-performing routes indicate prime candidates for capacity expansion, 
+           premium service introduction, and strategic partnership development for revenue optimization.
+           
+        3. **Operational Excellence Indicators**: Temporal distribution analysis reveals dynamic pricing opportunities, 
+           resource optimization potential, and capacity utilization strategies for margin improvement.
+           
+        4. **Portfolio Diversification Strategy**: Market segment analysis provides insights for risk mitigation, 
+           revenue stream diversification, and strategic positioning in global vs. regional markets.
+           
+        5. **Competitive Intelligence**: Carrier analysis reveals market concentration risks, partnership opportunities, 
+           and competitive positioning strategies for sustained market leadership.
         """)
 
 # Education Intelligence Platform
@@ -1249,37 +1214,30 @@ elif page == "🎓 Education Intelligence":
         st.markdown("# University Dashboard Insights")
         st.markdown("## Executive Summary")
         st.markdown("""
-        This dashboard analyzes 6 years of university data (2018-2023) covering over 150,000 student records across 
-        four major academic departments. The analysis examines application trends, enrollment patterns, retention rates, 
-        and satisfaction metrics to provide actionable insights for strategic planning.
+        This dashboard provides a comprehensive analysis of the university's admissions process, enrollment patterns, 
+        student retention, and satisfaction metrics. The insights reveal trends over time, differences between academic terms, 
+        and variations across academic departments.
         
-        Key metrics show 15% growth in applications, 8.5% improvement in retention rates, and significant 
-        departmental variations that inform resource allocation decisions.
+        These findings can help university administrators make data-driven decisions about recruitment strategies, 
+        resource allocation, and student success initiatives.
         """)
         
-        st.markdown("## Key Performance Insights")
+        st.markdown("## Key Findings")
         st.markdown("""
-        **📈 Enrollment Growth Patterns**
-        - Total applications increased 15% from 2018-2023 (28,500 to 32,775)
-        - Engineering leads with 35% of total enrollment (avg. 2,450 students/year)
-        - Business maintains stable 28% share (avg. 1,960 students/year)
-        - Fall term consistently outperforms Spring by 25-30% in applications
-        
-        **🎯 Retention & Success Metrics**
-        - Overall retention improved from 82.1% to 90.6% (8.5 percentage point gain)
-        - Student satisfaction scores increased from 3.2 to 4.1 (28% improvement)
-        - Engineering shows highest retention at 92%, Science lowest at 86%
-        
-        **💼 Strategic Opportunities**
-        - Spring term enrollment gap presents 2,000+ student capacity opportunity
-        - Science department shows 12% enrollment decline - requires intervention
-        - Yield rate optimization could increase enrollment by 400-500 students annually
-        - Peak satisfaction periods (Fall 2021-2022) correlate with retention improvements
-        
-        **⚠️ Areas Requiring Attention**
-        - Science department enrollment volatility needs strategic support
-        - Spring term marketing effectiveness requires enhancement
-        - Retention gap between departments suggests resource redistribution needs
+        1. **Admissions Trends**: The data shows an overall upward trend in applications, admissions, and enrollments over the analyzed period, 
+           indicating growing interest in the university.
+           
+        2. **Term Differences**: There are notable differences between Spring and Fall terms in terms of application volume, 
+           acceptance rates, and enrollment patterns, which suggests opportunities for term-specific strategies.
+           
+        3. **Retention and Satisfaction**: Student retention rates and satisfaction scores have improved gradually over time, 
+           potentially reflecting successful student success initiatives or improvements in academic programs.
+           
+        4. **Departmental Analysis**: Engineering consistently leads in enrollment numbers, followed by Business, Arts, and Science. 
+           Each department shows distinct enrollment patterns that may be influenced by industry trends, program reputation, or resources.
+           
+        5. **Yield Rate**: The percentage of admitted students who ultimately enroll varies across terms and years, 
+           indicating potential areas for improving conversion in the admissions funnel.
         """)
         
 
