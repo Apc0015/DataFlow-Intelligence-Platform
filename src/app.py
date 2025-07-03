@@ -20,298 +20,376 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Add custom CSS for professional styling
+# Enhanced professional styling
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     .main {
         font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     }
     
     .hero-header {
-        font-size: 3.5rem;
+        font-size: 4rem;
         font-weight: 700;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
+        text-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     
     .main-header {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
         font-weight: 600;
-        margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, #1E3A8A 0%, #1D4ED8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     
     .sub-header {
-        font-size: 2rem;
+        font-size: 2.2rem;
         font-weight: 500;
         margin-top: 2rem;
         margin-bottom: 1rem;
-        color: #2E3440;
+        color: #1E3A8A;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
     
     .highlight {
-        color: #FF6B35;
+        color: #059669;
         font-weight: 600;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     }
     
     .portfolio-card {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        padding: 2rem;
-        border-radius: 15px;
-        margin: 1.5rem 0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        border: 1px solid rgba(255,255,255,0.2);
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        padding: 2.5rem;
+        border-radius: 20px;
+        margin: 2rem 0;
+        box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
+        border: 1px solid rgba(30, 58, 138, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .portfolio-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba(30, 58, 138, 0.15);
     }
     
     .metric-card {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 12px;
+        padding: 2rem;
+        border-radius: 15px;
         text-align: center;
         margin: 1rem 0;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 15px 35px rgba(30, 58, 138, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .metric-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 45px rgba(30, 58, 138, 0.4);
     }
     
     .insight-box {
-        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-        padding: 1.5rem;
-        border-radius: 12px;
-        margin: 1.5rem 0;
-        border-left: 5px solid #1E88E5;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        border-left: 6px solid #1E3A8A;
+        box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+        transition: transform 0.2s ease;
+    }
+    
+    .insight-box:hover {
+        transform: translateX(5px);
+    }
+    
+    .value-prop {
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        border-left: 6px solid #059669;
+        box-shadow: 0 10px 25px rgba(5, 150, 105, 0.1);
     }
     
     .cta-button {
-        background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
         color: white;
-        padding: 12px 24px;
-        border-radius: 25px;
+        padding: 15px 30px;
+        border-radius: 30px;
         text-decoration: none;
         font-weight: 600;
         display: inline-block;
-        margin: 10px 5px;
-        transition: transform 0.3s ease;
-        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        margin: 15px 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
     
     .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
-    }
-    
-    .sidebar .sidebar-content {
-        background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(30, 58, 138, 0.4);
+        background: linear-gradient(135deg, #1D4ED8 0%, #10B981 100%);
     }
     
     .nav-header {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 600;
-        color: #2E3440;
-        margin-bottom: 1rem;
+        color: #1E3A8A;
+        margin-bottom: 1.5rem;
         text-align: center;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    .personal-brand {
+        background: linear-gradient(135deg, #1E3A8A 0%, #059669 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+        margin: 1rem 0;
+        box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
     }
 </style>
 """, unsafe_allow_html=True)
 
-# Create professional navigation sidebar
-st.sidebar.markdown('<div class="nav-header">🚀 Portfolio Navigation</div>', unsafe_allow_html=True)
+# Professional navigation sidebar
+st.sidebar.markdown('<div class="nav-header">🚀 DataFlow Intelligence Platform</div>', unsafe_allow_html=True)
 page = st.sidebar.radio(
-    "Explore My Analytics Projects:",
-    ["Portfolio Overview", "Transportation Analytics", "Education Intelligence", "Visualization Excellence"]
+    "Navigate Platform Modules:",
+    ["🏠 Portfolio Overview", "✈️ Transportation Analytics", "🎓 Education Intelligence", "📊 Visualization Excellence"]
 )
 
-# Add personal branding in sidebar
+# Personal branding sidebar
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
-<div style="text-align: center; padding: 1rem;">
-    <h4>👨‍💻 Ayush Chhoker</h4>
-    <p><em>Data Analytics Professional</em></p>
-    <div style="margin-top: 1rem;">
-        <a href="https://www.linkedin.com/in/apc15/" target="_blank" class="cta-button" style="font-size: 0.8rem;">
-            LinkedIn
+<div class="personal-brand">
+    <h3>👨‍💻 Ayush Chhoker</h3>
+    <p><strong>Data Analytics Professional</strong></p>
+    <p style="font-size: 0.9rem; margin-top: 1rem;">
+        Passionate about transforming raw data into strategic business insights through innovative analytics solutions.
+    </p>
+    <div style="margin-top: 1.5rem;">
+        <a href="https://www.linkedin.com/in/apc15/" target="_blank" class="cta-button" style="font-size: 0.7rem; padding: 8px 16px;">
+            Connect on LinkedIn
         </a>
-        <a href="https://github.com/Apc0015" target="_blank" class="cta-button" style="font-size: 0.8rem;">
-            GitHub
+        <a href="https://github.com/Apc0015" target="_blank" class="cta-button" style="font-size: 0.7rem; padding: 8px 16px;">
+            View GitHub
         </a>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 # Portfolio Overview Page
-if page == "Portfolio Overview":
+if page == "🏠 Portfolio Overview":
     # Hero Section
     st.markdown('<div class="hero-header">DataFlow Intelligence Platform</div>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.markdown("""
-        <div style="text-align: center; font-size: 1.3rem; color: #4A5568; margin-bottom: 2rem;">
-            Advanced Analytics for Strategic Decision Making
+        <div style="text-align: center; font-size: 1.5rem; color: #1E3A8A; margin-bottom: 2rem; font-weight: 600;">
+            Advanced Analytics Across Multiple Business Domains
         </div>
         """, unsafe_allow_html=True)
 
-    # About My Analytics Journey
+    # Personal mission and journey
     st.markdown("""
     <div class="portfolio-card">
         <h2>🎯 About My Analytics Journey</h2>
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            DataFlow Intelligence Platform represents my expertise in building comprehensive analytics ecosystems that transform 
-            raw data into strategic business intelligence. This platform demonstrates advanced capabilities in multi-domain 
-            analytics, from transportation optimization to educational insights and visualization excellence.
+            I designed and built DataFlow Intelligence Platform as a comprehensive demonstration of my expertise in 
+            multi-domain analytics. This platform showcases my ability to transform complex business challenges into 
+            actionable insights across transportation, education, and data visualization domains.
         </p>
         
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            <strong>Platform Mission:</strong> To democratize advanced analytics through intuitive interfaces that enable 
-            data-driven decision making across industries, combining statistical rigor with compelling data storytelling.
+            <strong>My Mission:</strong> I'm passionate about democratizing advanced analytics through intuitive, 
+            business-focused solutions that enable data-driven decision making across industries. This platform 
+            represents my commitment to combining statistical rigor with compelling data storytelling.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Key Metrics
-    st.markdown("### 📊 Platform Impact Metrics")
+    # Personal motivation and learning
+    st.markdown("""
+    <div class="value-prop">
+        <h3>💡 My Development Philosophy</h3>
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+            I believe in learning by building. Each module in this platform represents a real-world challenge I identified 
+            and solved through self-directed research, experimentation, and iterative development. My approach combines 
+            theoretical knowledge with practical application to create solutions that deliver measurable business value.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Impact Metrics Section
+    st.markdown("### 📊 My Platform Achievement Metrics")
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
         st.markdown("""
         <div class="metric-card">
-            <h3>3</h3>
-            <p>Advanced Analytics Projects</p>
+            <h3>40%</h3>
+            <p>Application Growth Analysis</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
         <div class="metric-card">
-            <h3>15+</h3>
-            <p>Interactive Visualizations</p>
+            <h3>90%</h3>
+            <p>Retention Rate Optimization</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
         st.markdown("""
         <div class="metric-card">
-            <h3>100K+</h3>
-            <p>Data Points Analyzed</p>
+            <h3>15+</h3>
+            <p>Interactive Visualizations Built</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col4:
         st.markdown("""
         <div class="metric-card">
-            <h3>3</h3>
-            <p>Industry Verticals</p>
+            <h3>10K+</h3>
+            <p>Data Points Processed</p>
         </div>
         """, unsafe_allow_html=True)
 
-    # Platform Modules
-    st.markdown("### 🚀 DataFlow Intelligence Modules")
+    # My Platform Modules
+    st.markdown("### 🚀 My DataFlow Intelligence Modules")
     
-    # Transportation Analytics Project
+    # Transportation Intelligence Hub
     st.markdown("""
     <div class="portfolio-card">
-        <h3>✈️ Transportation Analytics Platform</h3>
-        <p><strong>Business Impact:</strong> Route optimization and operational efficiency analysis for aviation industry</p>
+        <h3>✈️ Transportation Intelligence Hub</h3>
+        <p><strong>What I Built:</strong> I developed a comprehensive route optimization and operational analytics solution for the aviation industry, transforming complex flight data into strategic business insights.</p>
         <ul>
-            <li><span class="highlight">📍 Geographic Intelligence:</span> Interactive route mapping with 50+ destinations</li>
-            <li><span class="highlight">📈 Performance Analytics:</span> Real-time operational metrics and KPI tracking</li>
-            <li><span class="highlight">🎯 Strategic Insights:</span> Market analysis and competitive positioning</li>
+            <li><span class="highlight">🎯 My Innovation:</span> Interactive route mapping system analyzing 50+ destinations with real-time performance metrics</li>
+            <li><span class="highlight">📈 Business Value I Created:</span> Operational efficiency dashboards enabling data-driven capacity planning and competitive analysis</li>
+            <li><span class="highlight">💼 Strategic Impact:</span> Market intelligence platform supporting route optimization and revenue maximization strategies</li>
         </ul>
-        <p><strong>Technologies:</strong> Python, Streamlit, Folium, Plotly, Advanced Statistical Analysis</p>
+        <p><strong>Technical Skills I Applied:</strong> Advanced Python programming, Geospatial analysis with Folium, Interactive dashboards with Plotly, Statistical modeling</p>
+        <p><strong>Challenge I Solved:</strong> How to transform complex aviation data into actionable business intelligence for strategic decision-making</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Education Intelligence Project  
+    # Education Intelligence Platform
     st.markdown("""
     <div class="portfolio-card">
-        <h3>🎓 Education Intelligence Dashboard</h3>
-        <p><strong>Business Impact:</strong> Student lifecycle analytics and institutional performance optimization</p>
+        <h3>🎓 Education Intelligence Platform</h3>
+        <p><strong>What I Built:</strong> I created a comprehensive student lifecycle analytics platform that transforms institutional data into strategic insights for educational performance optimization.</p>
         <ul>
-            <li><span class="highlight">📊 Enrollment Analytics:</span> Multi-year trend analysis and forecasting</li>
-            <li><span class="highlight">🎯 Retention Intelligence:</span> Student success and satisfaction monitoring</li>
-            <li><span class="highlight">💼 Strategic Planning:</span> Departmental performance and resource allocation</li>
+            <li><span class="highlight">📊 My Solution:</span> Multi-year enrollment trend analysis with 90% retention rate optimization insights</li>
+            <li><span class="highlight">🎯 Value I Delivered:</span> Student success monitoring system with departmental performance analytics and resource allocation optimization</li>
+            <li><span class="highlight">💡 Innovation I Designed:</span> Predictive modeling framework for institutional strategic planning and growth forecasting</li>
         </ul>
-        <p><strong>Technologies:</strong> Advanced Time Series Analysis, Predictive Modeling, Interactive Dashboards</p>
+        <p><strong>Technical Expertise I Demonstrated:</strong> Time series analysis, Predictive modeling, Advanced data visualization, Statistical forecasting</p>
+        <p><strong>Problem I Addressed:</strong> How to leverage educational data for evidence-based decision making and institutional excellence</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Visualization Excellence Project
+    # Visualization Excellence Framework
     st.markdown("""
     <div class="portfolio-card">
         <h3>📊 Visualization Excellence Framework</h3>
-        <p><strong>Business Impact:</strong> Data storytelling best practices and communication strategy</p>
+        <p><strong>What I Developed:</strong> I designed a comprehensive framework demonstrating data storytelling best practices and effective business communication through advanced visualization techniques.</p>
         <ul>
-            <li><span class="highlight">🎨 Design Principles:</span> Comparative analysis of visualization effectiveness</li>
-            <li><span class="highlight">📈 Statistical Rigor:</span> Correlation analysis and regression modeling</li>
-            <li><span class="highlight">🌍 Global Insights:</span> Cross-cultural happiness and economic analysis</li>
+            <li><span class="highlight">🎨 My Methodology:</span> Comparative analysis framework showcasing effective vs. ineffective visualization design principles</li>
+            <li><span class="highlight">📈 Research I Conducted:</span> Statistical analysis of global happiness data with correlation modeling and regression analysis</li>
+            <li><span class="highlight">🌍 Insights I Generated:</span> Cross-cultural economic analysis revealing data-driven insights for strategic planning</li>
         </ul>
-        <p><strong>Technologies:</strong> Advanced Statistical Methods, Scientific Visualization, Data Communication</p>
+        <p><strong>Skills I Mastered:</strong> Advanced statistical methods, Scientific visualization principles, Data communication strategy, Business intelligence presentation</p>
+        <p><strong>Impact I Achieved:</strong> Created reusable framework for effective data storytelling that enhances stakeholder engagement and decision-making</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Call to Action
-    st.markdown("### 🤝 Let's Connect")
+    # Professional Call to Action
+    st.markdown("### 🤝 Explore My Work & Connect")
     col1, col2, col3 = st.columns([1, 1, 1])
     
     with col2:
         st.markdown("""
         <div style="text-align: center; margin: 2rem 0;">
             <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
-                Ready to discuss how data analytics can transform your business?
+                Interested in discussing data analytics opportunities or learning more about my approach to business intelligence?
             </p>
             <a href="https://www.linkedin.com/in/apc15/" target="_blank" class="cta-button">
-                Connect on LinkedIn
+                Professional Network
             </a>
-            <a href="mailto:Ayushchhoker15@gmail.com" class="cta-button">
-                Get In Touch
+            <a href="https://github.com/Apc0015" target="_blank" class="cta-button">
+                View My Code
             </a>
         </div>
         """, unsafe_allow_html=True)
 
-# Transportation Analytics Platform
-elif page == "Transportation Analytics":
-    st.markdown('<div class="main-header">✈️ Transportation Analytics Platform</div>', unsafe_allow_html=True)
+# Transportation Intelligence Hub
+elif page == "✈️ Transportation Analytics":
+    st.markdown('<div class="main-header">✈️ Transportation Intelligence Hub</div>', unsafe_allow_html=True)
     
-    # Business value introduction
+    # Personal development story and business value
     st.markdown("""
     <div class="portfolio-card">
-        <h3>🎯 Strategic Business Value</h3>
+        <h3>🎯 My Strategic Analytics Solution</h3>
         <p style="font-size: 1.1rem;">
-            This comprehensive analytics platform empowers aviation industry stakeholders with data-driven insights 
-            for route optimization, operational efficiency, and competitive analysis. By analyzing flight patterns, 
-            market penetration, and operational metrics, organizations can make strategic decisions that drive 
-            revenue growth and operational excellence.
+            I identified the critical need for comprehensive aviation analytics and developed this Transportation Intelligence Hub 
+            to transform complex flight data into strategic business insights. My solution empowers aviation stakeholders with 
+            data-driven tools for route optimization, operational efficiency, and competitive market analysis.
         </p>
         
         <div style="display: flex; justify-content: space-around; margin-top: 1.5rem;">
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">🎯</div>
-                <p><strong>Route Optimization</strong></p>
+                <p><strong>Route Optimization</strong><br><small>I Built</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">📊</div>
-                <p><strong>Market Intelligence</strong></p>
+                <p><strong>Market Intelligence</strong><br><small>I Designed</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">⚡</div>
-                <p><strong>Operational Efficiency</strong></p>
+                <p><strong>Operational Analytics</strong><br><small>I Created</small></p>
             </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
+
+    # Personal learning and challenges overcome
+    st.markdown("""
+    <div class="value-prop">
+        <h3>💡 My Development Journey</h3>
+        <p style="font-size: 1.1rem;">
+            <strong>Challenge I Identified:</strong> Aviation data is complex and fragmented, making it difficult to extract 
+            actionable business insights for strategic decision-making.
+        </p>
+        <p style="font-size: 1.1rem;">
+            <strong>Solution I Developed:</strong> I researched aviation industry needs and built an integrated analytics platform 
+            that combines geospatial analysis, operational metrics, and competitive intelligence in an intuitive interface.
+        </p>
+        <p style="font-size: 1.1rem;">
+            <strong>Skills I Mastered:</strong> Advanced geospatial programming with Folium, interactive dashboard development, 
+            aviation domain expertise, and business intelligence visualization techniques.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
-    # Strategic analytics controls
-    st.sidebar.markdown("## 🎯 Analytics Configuration")
-    st.sidebar.markdown("**Select Strategic Hub for Analysis**")
+    # My analytics configuration
+    st.sidebar.markdown("## 🎯 My Hub Analysis Tool")
+    st.sidebar.markdown("**Select Aviation Hub for Deep Dive Analysis**")
     airport = st.sidebar.selectbox(
-        "Major East Coast Aviation Hub:",
+        "Major East Coast Hub I'm Analyzing:",
         ["JFK - John F. Kennedy International (New York)",
          "ATL - Hartsfield-Jackson Atlanta International",
          "MIA - Miami International", 
@@ -323,11 +401,11 @@ elif page == "Transportation Analytics":
     st.sidebar.markdown("---")
     st.sidebar.markdown("""
     <div class="insight-box" style="margin: 1rem 0;">
-        <h4>💡 Business Insight</h4>
+        <h4>💡 My Analytics Approach</h4>
         <p style="font-size: 0.9rem;">
-            Each hub represents unique strategic advantages - from JFK's international connectivity 
-            to ATL's domestic dominance. This analysis reveals operational patterns critical for 
-            route planning and market expansion.
+            I selected these strategic hubs because each represents distinct market positioning opportunities. 
+            My analysis framework reveals how operational patterns drive competitive advantages and identifies 
+            optimization opportunities for route planning and capacity allocation.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -427,24 +505,25 @@ elif page == "Transportation Analytics":
     # Load and prepare the airport data
     airport_data = load_airport_data(airport_code)
     
-    # Create strategic analytics sections
+    # My analytical framework sections
     tab1, tab2, tab3 = st.tabs([
-        "🗺️ Route Intelligence & Market Analysis", 
-        "📊 Operational Performance Analytics", 
-        "🏢 Competitive Intelligence & Market Share"
+        "🗺️ My Route Intelligence System", 
+        "📊 My Performance Analytics Dashboard", 
+        "🏢 My Competitive Intelligence Framework"
     ])
     
     with tab1:
-        st.markdown('<div class="sub-header">🗺️ Strategic Route Intelligence</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sub-header">🗺️ My Route Intelligence Mapping System</div>', unsafe_allow_html=True)
         
-        # Business context
+        # Personal development context
         st.markdown("""
         <div class="insight-box">
-            <h4>📈 Business Impact Analysis</h4>
+            <h4>📈 My Analytics Innovation</h4>
             <p>
-                This interactive route visualization enables strategic decision-making for network expansion, 
-                capacity allocation, and competitive positioning. Each route represents revenue opportunities 
-                and operational investments that drive long-term growth.
+                I developed this interactive route visualization system to transform complex aviation data into 
+                strategic business intelligence. My solution enables decision-makers to identify network expansion 
+                opportunities, optimize capacity allocation, and develop competitive positioning strategies through 
+                data-driven insights.
             </p>
         </div>
         """, unsafe_allow_html=True)
@@ -729,35 +808,54 @@ elif page == "Transportation Analytics":
            and competitive positioning strategies for sustained market leadership.
         """)
 
-# Education Intelligence Dashboard
-elif page == "Education Intelligence":
-    st.markdown('<div class="main-header">🎓 Education Intelligence Dashboard</div>', unsafe_allow_html=True)
+# Education Intelligence Platform
+elif page == "🎓 Education Intelligence":
+    st.markdown('<div class="main-header">🎓 Education Intelligence Platform</div>', unsafe_allow_html=True)
     
-    # Business value introduction
+    # Personal development story and business value
     st.markdown("""
     <div class="portfolio-card">
-        <h3>🎯 Strategic Educational Analytics</h3>
+        <h3>🎯 My Educational Analytics Innovation</h3>
         <p style="font-size: 1.1rem;">
-            This comprehensive intelligence platform transforms educational data into strategic insights for 
-            institutional growth, student success optimization, and competitive positioning. By analyzing 
-            enrollment patterns, retention metrics, and satisfaction indicators, educational leaders can 
-            make data-driven decisions that drive sustainable growth and academic excellence.
+            I recognized the critical need for data-driven decision making in education and developed this comprehensive 
+            intelligence platform to transform institutional data into strategic insights. My solution empowers educational 
+            leaders with analytics tools for enrollment optimization, student success monitoring, and evidence-based 
+            strategic planning that drives institutional excellence.
         </p>
         
         <div style="display: flex; justify-content: space-around; margin-top: 1.5rem;">
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">📊</div>
-                <p><strong>Enrollment Optimization</strong></p>
+                <p><strong>Enrollment Analytics</strong><br><small>I Developed</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">🎯</div>
-                <p><strong>Student Success Analytics</strong></p>
+                <p><strong>Success Monitoring</strong><br><small>I Built</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">💼</div>
-                <p><strong>Strategic Planning</strong></p>
+                <p><strong>Strategic Intelligence</strong><br><small>I Created</small></p>
             </div>
         </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Personal learning journey
+    st.markdown("""
+    <div class="value-prop">
+        <h3>💡 My Educational Analytics Journey</h3>
+        <p style="font-size: 1.1rem;">
+            <strong>Challenge I Identified:</strong> Educational institutions often struggle to extract actionable insights 
+            from their data, leading to reactive rather than strategic decision-making.
+        </p>
+        <p style="font-size: 1.1rem;">
+            <strong>Solution I Built:</strong> I researched educational KPIs and developed a comprehensive analytics framework 
+            that transforms enrollment, retention, and satisfaction data into strategic intelligence for institutional growth.
+        </p>
+        <p style="font-size: 1.1rem;">
+            <strong>Impact I Achieved:</strong> My platform enables 90% retention rate optimization through predictive analytics 
+            and provides actionable insights for resource allocation and strategic planning.
+        </p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -765,7 +863,7 @@ elif page == "Education Intelligence":
     @st.cache_data
     def load_university_data():
         try:
-            data = pd.read_csv("university_student_dashboard_data.csv")
+            data = pd.read_csv("data/raw/university_data.csv")
             return data
         except Exception as e:
             # Create sample data
@@ -1144,22 +1242,47 @@ elif page == "Education Intelligence":
         
 
 
-# Problem 3: Data Visualization Comparison
-elif page == "Problem 3: Data Visualization Comparison":
-    st.markdown('<div class="main-header">Problem 3: Data Visualization Comparison</div>', unsafe_allow_html=True)
+# Visualization Excellence Framework
+elif page == "📊 Visualization Excellence":
+    st.markdown('<div class="main-header">📊 Visualization Excellence Framework</div>', unsafe_allow_html=True)
     
+    # Personal development story
     st.markdown("""
-    This section demonstrates the importance of effective data visualization techniques by comparing 
-    poor and improved visualizations of the same dataset. The analysis uses the World Happiness Report 
-    data from 2022 to explore the relationship between GDP per capita and happiness scores.
-    """)
+    <div class="portfolio-card">
+        <h3>🎯 My Visualization Mastery Framework</h3>
+        <p style="font-size: 1.1rem;">
+            I developed this comprehensive framework to demonstrate the critical impact of effective data visualization 
+            on business communication and decision-making. Through comparative analysis of visualization techniques, 
+            I showcase how strategic design choices can transform data comprehension and stakeholder engagement.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Personal learning journey
+    st.markdown("""
+    <div class="value-prop">
+        <h3>💡 My Visualization Philosophy</h3>
+        <p style="font-size: 1.1rem;">
+            <strong>Challenge I Addressed:</strong> Poor data visualization can mislead stakeholders and undermine 
+            data-driven decision making, while excellent visualization empowers strategic thinking.
+        </p>
+        <p style="font-size: 1.1rem;">
+            <strong>Framework I Created:</strong> I researched visualization psychology and design principles to 
+            build a comprehensive framework that demonstrates best practices through real-world data analysis.
+        </p>
+        <p style="font-size: 1.1rem;">
+            <strong>Skills I Mastered:</strong> Advanced statistical visualization, design psychology, stakeholder 
+            communication strategies, and business intelligence presentation techniques.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Load the dataset
     @st.cache_data
     def load_happiness_data():
         try:
             # Attempt to load the actual data
-            df = pd.read_csv('2022.csv', decimal=',')
+            df = pd.read_csv('data/raw/2022.csv', decimal=',')
             # Clean up column names
             df.columns = ['RANK', 'Country', 'Happiness_score', 'Whisker_high', 'Whisker_low', 
                          'Dystopia_residual', 'GDP_per_capita', 'Social_support', 
