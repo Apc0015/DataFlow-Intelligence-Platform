@@ -169,26 +169,6 @@ page = st.sidebar.radio(
     ["🏠 Portfolio Overview", "✈️ Transportation Analytics", "🎓 Education Intelligence", "📊 Visualization Excellence"]
 )
 
-# Personal branding sidebar
-st.sidebar.markdown("---")
-st.sidebar.markdown("""
-<div class="personal-brand">
-    <h3>👨‍💻 Ayush Chhoker</h3>
-    <p><strong>Data Analytics Professional</strong></p>
-    <p style="font-size: 0.9rem; margin-top: 1rem;">
-        Passionate about transforming raw data into strategic business insights through innovative analytics solutions.
-    </p>
-    <div style="margin-top: 1.5rem;">
-        <a href="https://www.linkedin.com/in/apc15/" target="_blank" class="cta-button" style="font-size: 0.7rem; padding: 8px 16px;">
-            Connect on LinkedIn
-        </a>
-        <a href="https://github.com/Apc0015" target="_blank" class="cta-button" style="font-size: 0.7rem; padding: 8px 16px;">
-            View GitHub
-        </a>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
 # Portfolio Overview Page
 if page == "🏠 Portfolio Overview":
     # Hero Section
@@ -202,38 +182,38 @@ if page == "🏠 Portfolio Overview":
         </div>
         """, unsafe_allow_html=True)
 
-    # Personal mission and journey
+    # Project overview
     st.markdown("""
     <div class="portfolio-card">
-        <h2>🎯 About My Analytics Journey</h2>
+        <h2>🎯 Project Overview</h2>
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            I designed and built DataFlow Intelligence Platform as a comprehensive demonstration of my expertise in 
-            multi-domain analytics. This platform showcases my ability to transform complex business challenges into 
+            DataFlow Intelligence Platform is a comprehensive analytics solution demonstrating expertise in 
+            multi-domain data analysis. This platform transforms complex business challenges into 
             actionable insights across transportation, education, and data visualization domains.
         </p>
         
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            <strong>My Mission:</strong> I'm passionate about democratizing advanced analytics through intuitive, 
-            business-focused solutions that enable data-driven decision making across industries. This platform 
-            represents my commitment to combining statistical rigor with compelling data storytelling.
+            <strong>Objective:</strong> Advanced analytics through intuitive, business-focused solutions that enable 
+            data-driven decision making across industries. This platform combines statistical rigor with 
+            compelling data storytelling.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Personal motivation and learning
+    # Technical approach
     st.markdown("""
     <div class="value-prop">
-        <h3>💡 My Development Philosophy</h3>
+        <h3>💡 Technical Approach</h3>
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            I believe in learning by building. Each module in this platform represents a real-world challenge I identified 
-            and solved through self-directed research, experimentation, and iterative development. My approach combines 
+            Each module in this platform represents a real-world business challenge solved through 
+            research, experimentation, and iterative development. The approach combines 
             theoretical knowledge with practical application to create solutions that deliver measurable business value.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
     # Impact Metrics Section
-    st.markdown("### 📊 My Platform Achievement Metrics")
+    st.markdown("### 📊 Platform Performance Metrics")
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
@@ -268,21 +248,21 @@ if page == "🏠 Portfolio Overview":
         </div>
         """, unsafe_allow_html=True)
 
-    # My Platform Modules
-    st.markdown("### 🚀 My DataFlow Intelligence Modules")
+    # Platform Modules
+    st.markdown("### 🚀 DataFlow Intelligence Modules")
     
     # Transportation Intelligence Hub
     st.markdown("""
     <div class="portfolio-card">
         <h3>✈️ Transportation Intelligence Hub</h3>
-        <p><strong>What I Built:</strong> I developed a comprehensive route optimization and operational analytics solution for the aviation industry, transforming complex flight data into strategic business insights.</p>
+        <p><strong>Description:</strong> Comprehensive route optimization and operational analytics solution for the aviation industry, transforming complex flight data into strategic business insights.</p>
         <ul>
-            <li><span class="highlight">🎯 My Innovation:</span> Interactive route mapping system analyzing 50+ destinations with real-time performance metrics</li>
-            <li><span class="highlight">📈 Business Value I Created:</span> Operational efficiency dashboards enabling data-driven capacity planning and competitive analysis</li>
+            <li><span class="highlight">🎯 Features:</span> Interactive route mapping system analyzing 50+ destinations with real-time performance metrics</li>
+            <li><span class="highlight">📈 Business Value:</span> Operational efficiency dashboards enabling data-driven capacity planning and competitive analysis</li>
             <li><span class="highlight">💼 Strategic Impact:</span> Market intelligence platform supporting route optimization and revenue maximization strategies</li>
         </ul>
-        <p><strong>Technical Skills I Applied:</strong> Advanced Python programming, Geospatial analysis with Folium, Interactive dashboards with Plotly, Statistical modeling</p>
-        <p><strong>Challenge I Solved:</strong> How to transform complex aviation data into actionable business intelligence for strategic decision-making</p>
+        <p><strong>Technical Stack:</strong> Advanced Python programming, Geospatial analysis with Folium, Interactive dashboards with Plotly, Statistical modeling</p>
+        <p><strong>Business Challenge:</strong> Transform complex aviation data into actionable business intelligence for strategic decision-making</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -290,14 +270,14 @@ if page == "🏠 Portfolio Overview":
     st.markdown("""
     <div class="portfolio-card">
         <h3>🎓 Education Intelligence Platform</h3>
-        <p><strong>What I Built:</strong> I created a comprehensive student lifecycle analytics platform that transforms institutional data into strategic insights for educational performance optimization.</p>
+        <p><strong>Description:</strong> Comprehensive student lifecycle analytics platform that transforms institutional data into strategic insights for educational performance optimization.</p>
         <ul>
-            <li><span class="highlight">📊 My Solution:</span> Multi-year enrollment trend analysis with 90% retention rate optimization insights</li>
-            <li><span class="highlight">🎯 Value I Delivered:</span> Student success monitoring system with departmental performance analytics and resource allocation optimization</li>
-            <li><span class="highlight">💡 Innovation I Designed:</span> Predictive modeling framework for institutional strategic planning and growth forecasting</li>
+            <li><span class="highlight">📊 Solution:</span> Multi-year enrollment trend analysis with 90% retention rate optimization insights</li>
+            <li><span class="highlight">🎯 Value Delivered:</span> Student success monitoring system with departmental performance analytics and resource allocation optimization</li>
+            <li><span class="highlight">💡 Innovation:</span> Predictive modeling framework for institutional strategic planning and growth forecasting</li>
         </ul>
-        <p><strong>Technical Expertise I Demonstrated:</strong> Time series analysis, Predictive modeling, Advanced data visualization, Statistical forecasting</p>
-        <p><strong>Problem I Addressed:</strong> How to leverage educational data for evidence-based decision making and institutional excellence</p>
+        <p><strong>Technical Implementation:</strong> Time series analysis, Predictive modeling, Advanced data visualization, Statistical forecasting</p>
+        <p><strong>Business Problem:</strong> Leverage educational data for evidence-based decision making and institutional excellence</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -305,32 +285,52 @@ if page == "🏠 Portfolio Overview":
     st.markdown("""
     <div class="portfolio-card">
         <h3>📊 Visualization Excellence Framework</h3>
-        <p><strong>What I Developed:</strong> I designed a comprehensive framework demonstrating data storytelling best practices and effective business communication through advanced visualization techniques.</p>
+        <p><strong>Description:</strong> Comprehensive framework demonstrating data storytelling best practices and effective business communication through advanced visualization techniques.</p>
         <ul>
-            <li><span class="highlight">🎨 My Methodology:</span> Comparative analysis framework showcasing effective vs. ineffective visualization design principles</li>
-            <li><span class="highlight">📈 Research I Conducted:</span> Statistical analysis of global happiness data with correlation modeling and regression analysis</li>
-            <li><span class="highlight">🌍 Insights I Generated:</span> Cross-cultural economic analysis revealing data-driven insights for strategic planning</li>
+            <li><span class="highlight">🎨 Methodology:</span> Comparative analysis framework showcasing effective vs. ineffective visualization design principles</li>
+            <li><span class="highlight">📈 Analysis:</span> Statistical analysis of global happiness data with correlation modeling and regression analysis</li>
+            <li><span class="highlight">🌍 Insights:</span> Cross-cultural economic analysis revealing data-driven insights for strategic planning</li>
         </ul>
-        <p><strong>Skills I Mastered:</strong> Advanced statistical methods, Scientific visualization principles, Data communication strategy, Business intelligence presentation</p>
-        <p><strong>Impact I Achieved:</strong> Created reusable framework for effective data storytelling that enhances stakeholder engagement and decision-making</p>
+        <p><strong>Technical Skills:</strong> Advanced statistical methods, Scientific visualization principles, Data communication strategy, Business intelligence presentation</p>
+        <p><strong>Impact:</strong> Reusable framework for effective data storytelling that enhances stakeholder engagement and decision-making</p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Professional Call to Action
-    st.markdown("### 🤝 Explore My Work & Connect")
+    # Personal branding - only on home page
+    st.markdown("---")
+    st.markdown("""
+    <div class="personal-brand" style="text-align: center; margin: 2rem 0;">
+        <h3>👨‍💻 Ayush Chhoker</h3>
+        <p><strong>Data Analytics Professional</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">
+            Passionate about transforming raw data into strategic business insights through innovative analytics solutions.
+        </p>
+        <div style="margin-top: 1.5rem;">
+            <a href="https://www.linkedin.com/in/apc15/" target="_blank" class="cta-button" style="font-size: 0.8rem; padding: 8px 16px; margin: 0 5px;">
+                Connect on LinkedIn
+            </a>
+            <a href="https://github.com/Apc0015" target="_blank" class="cta-button" style="font-size: 0.8rem; padding: 8px 16px; margin: 0 5px;">
+                View GitHub
+            </a>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Project Links
+    st.markdown("### 🔗 Project Resources")
     col1, col2, col3 = st.columns([1, 1, 1])
     
     with col2:
         st.markdown("""
         <div style="text-align: center; margin: 2rem 0;">
             <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
-                Interested in discussing data analytics opportunities or learning more about my approach to business intelligence?
+                Explore the live application and technical implementation
             </p>
-            <a href="https://www.linkedin.com/in/apc15/" target="_blank" class="cta-button">
-                Professional Network
+            <a href="https://dataflow-intelligence-platformgit-abnunhzst7htqqrrgffm2a.streamlit.app/" target="_blank" class="cta-button" style="margin: 0 5px;">
+                Live Application
             </a>
-            <a href="https://github.com/Apc0015" target="_blank" class="cta-button">
-                View My Code
+            <a href="https://github.com/Apc0015/DataFlow-Intelligence-Platform" target="_blank" class="cta-button" style="margin: 0 5px;">
+                View Source Code
             </a>
         </div>
         """, unsafe_allow_html=True)
@@ -339,28 +339,28 @@ if page == "🏠 Portfolio Overview":
 elif page == "✈️ Transportation Analytics":
     st.markdown('<div class="main-header">✈️ Transportation Intelligence Hub</div>', unsafe_allow_html=True)
     
-    # Personal development story and business value
+    # Project overview and business value
     st.markdown("""
     <div class="portfolio-card">
-        <h3>🎯 My Strategic Analytics Solution</h3>
+        <h3>🎯 Strategic Analytics Solution</h3>
         <p style="font-size: 1.1rem;">
-            I identified the critical need for comprehensive aviation analytics and developed this Transportation Intelligence Hub 
-            to transform complex flight data into strategic business insights. My solution empowers aviation stakeholders with 
+            Transportation Intelligence Hub addresses the critical need for comprehensive aviation analytics by 
+            transforming complex flight data into strategic business insights. This solution empowers aviation stakeholders with 
             data-driven tools for route optimization, operational efficiency, and competitive market analysis.
         </p>
         
         <div style="display: flex; justify-content: space-around; margin-top: 1.5rem;">
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">🎯</div>
-                <p><strong>Route Optimization</strong><br><small>I Built</small></p>
+                <p><strong>Route Optimization</strong><br><small>Advanced</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">📊</div>
-                <p><strong>Market Intelligence</strong><br><small>I Designed</small></p>
+                <p><strong>Market Intelligence</strong><br><small>Comprehensive</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">⚡</div>
-                <p><strong>Operational Analytics</strong><br><small>I Created</small></p>
+                <p><strong>Operational Analytics</strong><br><small>Strategic</small></p>
             </div>
         </div>
     </div>
@@ -369,27 +369,27 @@ elif page == "✈️ Transportation Analytics":
     # Personal learning and challenges overcome
     st.markdown("""
     <div class="value-prop">
-        <h3>💡 My Development Journey</h3>
+        <h3>💡 Development Approach</h3>
         <p style="font-size: 1.1rem;">
-            <strong>Challenge I Identified:</strong> Aviation data is complex and fragmented, making it difficult to extract 
+            <strong>Challenge Addressed:</strong> Aviation data is complex and fragmented, making it difficult to extract 
             actionable business insights for strategic decision-making.
         </p>
         <p style="font-size: 1.1rem;">
-            <strong>Solution I Developed:</strong> I researched aviation industry needs and built an integrated analytics platform 
+            <strong>Solution Implemented:</strong> Research into aviation industry needs informed the development of an integrated analytics platform 
             that combines geospatial analysis, operational metrics, and competitive intelligence in an intuitive interface.
         </p>
         <p style="font-size: 1.1rem;">
-            <strong>Skills I Mastered:</strong> Advanced geospatial programming with Folium, interactive dashboard development, 
+            <strong>Technical Skills Applied:</strong> Advanced geospatial programming with Folium, interactive dashboard development, 
             aviation domain expertise, and business intelligence visualization techniques.
         </p>
     </div>
     """, unsafe_allow_html=True)
     
     # My analytics configuration
-    st.sidebar.markdown("## 🎯 My Hub Analysis Tool")
+    st.sidebar.markdown("## 🎯 Hub Analysis Tool")
     st.sidebar.markdown("**Select Aviation Hub for Deep Dive Analysis**")
     airport = st.sidebar.selectbox(
-        "Major East Coast Hub I'm Analyzing:",
+        "Select Major East Coast Hub:",
         ["JFK - John F. Kennedy International (New York)",
          "ATL - Hartsfield-Jackson Atlanta International",
          "MIA - Miami International", 
@@ -401,10 +401,10 @@ elif page == "✈️ Transportation Analytics":
     st.sidebar.markdown("---")
     st.sidebar.markdown("""
     <div class="insight-box" style="margin: 1rem 0;">
-        <h4>💡 My Analytics Approach</h4>
+        <h4>💡 Analytics Approach</h4>
         <p style="font-size: 0.9rem;">
-            I selected these strategic hubs because each represents distinct market positioning opportunities. 
-            My analysis framework reveals how operational patterns drive competitive advantages and identifies 
+            These strategic hubs were selected because each represents distinct market positioning opportunities. 
+            The analysis framework reveals how operational patterns drive competitive advantages and identifies 
             optimization opportunities for route planning and capacity allocation.
         </p>
     </div>
@@ -815,10 +815,10 @@ elif page == "🎓 Education Intelligence":
     # Personal development story and business value
     st.markdown("""
     <div class="portfolio-card">
-        <h3>🎯 My Educational Analytics Innovation</h3>
+        <h3>🎯 Educational Analytics Innovation</h3>
         <p style="font-size: 1.1rem;">
-            I recognized the critical need for data-driven decision making in education and developed this comprehensive 
-            intelligence platform to transform institutional data into strategic insights. My solution empowers educational 
+            This comprehensive intelligence platform addresses the critical need for data-driven decision making in education 
+            by transforming institutional data into strategic insights. The solution empowers educational 
             leaders with analytics tools for enrollment optimization, student success monitoring, and evidence-based 
             strategic planning that drives institutional excellence.
         </p>
@@ -826,15 +826,15 @@ elif page == "🎓 Education Intelligence":
         <div style="display: flex; justify-content: space-around; margin-top: 1.5rem;">
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">📊</div>
-                <p><strong>Enrollment Analytics</strong><br><small>I Developed</small></p>
+                <p><strong>Enrollment Analytics</strong><br><small>Advanced System</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">🎯</div>
-                <p><strong>Success Monitoring</strong><br><small>I Built</small></p>
+                <p><strong>Success Monitoring</strong><br><small>Comprehensive Framework</small></p>
             </div>
             <div style="text-align: center;">
                 <div class="highlight" style="font-size: 1.5rem;">💼</div>
-                <p><strong>Strategic Intelligence</strong><br><small>I Created</small></p>
+                <p><strong>Strategic Intelligence</strong><br><small>Integrated Platform</small></p>
             </div>
         </div>
     </div>
@@ -843,17 +843,17 @@ elif page == "🎓 Education Intelligence":
     # Personal learning journey
     st.markdown("""
     <div class="value-prop">
-        <h3>💡 My Educational Analytics Journey</h3>
+        <h3>💡 Educational Analytics Framework</h3>
         <p style="font-size: 1.1rem;">
-            <strong>Challenge I Identified:</strong> Educational institutions often struggle to extract actionable insights 
+            <strong>Challenge Addressed:</strong> Educational institutions often struggle to extract actionable insights 
             from their data, leading to reactive rather than strategic decision-making.
         </p>
         <p style="font-size: 1.1rem;">
-            <strong>Solution I Built:</strong> I researched educational KPIs and developed a comprehensive analytics framework 
+            <strong>Solution Implemented:</strong> Research into educational KPIs informed the development of a comprehensive analytics framework 
             that transforms enrollment, retention, and satisfaction data into strategic intelligence for institutional growth.
         </p>
         <p style="font-size: 1.1rem;">
-            <strong>Impact I Achieved:</strong> My platform enables 90% retention rate optimization through predictive analytics 
+            <strong>Impact Delivered:</strong> The platform enables 90% retention rate optimization through predictive analytics 
             and provides actionable insights for resource allocation and strategic planning.
         </p>
     </div>
@@ -1246,32 +1246,32 @@ elif page == "🎓 Education Intelligence":
 elif page == "📊 Visualization Excellence":
     st.markdown('<div class="main-header">📊 Visualization Excellence Framework</div>', unsafe_allow_html=True)
     
-    # Personal development story
+    # Framework overview
     st.markdown("""
     <div class="portfolio-card">
-        <h3>🎯 My Visualization Mastery Framework</h3>
+        <h3>🎯 Visualization Mastery Framework</h3>
         <p style="font-size: 1.1rem;">
-            I developed this comprehensive framework to demonstrate the critical impact of effective data visualization 
+            This comprehensive framework demonstrates the critical impact of effective data visualization 
             on business communication and decision-making. Through comparative analysis of visualization techniques, 
-            I showcase how strategic design choices can transform data comprehension and stakeholder engagement.
+            it showcases how strategic design choices can transform data comprehension and stakeholder engagement.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
-    # Personal learning journey
+    # Visualization philosophy
     st.markdown("""
     <div class="value-prop">
-        <h3>💡 My Visualization Philosophy</h3>
+        <h3>💡 Visualization Philosophy</h3>
         <p style="font-size: 1.1rem;">
-            <strong>Challenge I Addressed:</strong> Poor data visualization can mislead stakeholders and undermine 
+            <strong>Challenge Addressed:</strong> Poor data visualization can mislead stakeholders and undermine 
             data-driven decision making, while excellent visualization empowers strategic thinking.
         </p>
         <p style="font-size: 1.1rem;">
-            <strong>Framework I Created:</strong> I researched visualization psychology and design principles to 
-            build a comprehensive framework that demonstrates best practices through real-world data analysis.
+            <strong>Framework Created:</strong> Research into visualization psychology and design principles 
+            built a comprehensive framework that demonstrates best practices through real-world data analysis.
         </p>
         <p style="font-size: 1.1rem;">
-            <strong>Skills I Mastered:</strong> Advanced statistical visualization, design psychology, stakeholder 
+            <strong>Skills Demonstrated:</strong> Advanced statistical visualization, design psychology, stakeholder 
             communication strategies, and business intelligence presentation techniques.
         </p>
     </div>
