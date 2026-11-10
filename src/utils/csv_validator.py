@@ -217,7 +217,11 @@ def validate_data_files(data_dir: Path) -> Dict[str, Dict]:
     # Define expected structures
     file_configs = {
         "2022.csv": {
-            "expected_columns": ['RANK', 'Country', 'Happiness_score', 'GDP_per_capita'],
+            "expected_columns": ['RANK', 'Country', 'Happiness score'],
+            "column_rename": {
+                'Happiness score': 'Happiness_score',
+                'Explained by: GDP per capita': 'GDP_per_capita'
+            },
             "numeric_columns": ['RANK', 'Happiness_score', 'GDP_per_capita'],
             "integrity_checker": DataIntegrityChecker.validate_happiness_data
         },
@@ -246,7 +250,9 @@ def validate_data_files(data_dir: Path) -> Dict[str, Dict]:
         if is_valid and file_path.exists():
             try:
                 # Load and clean data
-                df = pd.read_csv(file_path)
+                df = pd.read_csv(file_path, decimal=',')
+                if "column_rename" in config:
+                    df = df.rename(columns=config["column_rename"])
                 df_cleaned = CSVValidator.clean_csv_data(df, config.get("numeric_columns"))
                 
                 # Quality report

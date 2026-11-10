@@ -69,77 +69,70 @@ def handle_navigation():
 
 ### Dashboard Components
 
-#### Airport Analysis Module
+#### Transportation Analytics Module
 ```python
 """
-Flight route analysis and visualization
-Location: src/components/airport_analysis.py (to be created)
+Aviation route analysis, hub performance, and geospatial mapping
+Location: src/components/transportation_analytics_simple.py
 """
 
-class AirportAnalyzer:
-    def __init__(self, airport_code: str):
-        self.airport_code = airport_code
-        self.data = self.load_airport_data()
-    
-    def load_airport_data(self) -> pd.DataFrame:
-        """Load and process airport route data"""
-        
-    def create_route_map(self) -> folium.Map:
-        """Generate interactive route map"""
-        
-    def analyze_destinations(self) -> dict:
-        """Analyze top destinations and patterns"""
-        
-    def generate_flight_distribution(self) -> dict:
-        """Calculate flight distribution metrics"""
+def render_transportation_analytics():
+    """Main renderer for transportation analytics module"""
+
+def render_route_intelligence(airport_code: str, airport_data: pd.DataFrame):
+    """Render interactive Folium map and destination tables"""
+
+def render_performance_analytics(airport_data: pd.DataFrame):
+    """Render flight volume by time period, airline market shares, and flight distances"""
+
+def render_competitive_intelligence(airport_data: pd.DataFrame):
+    """Analyze carrier distribution, domestic vs international routes, and metrics"""
 ```
 
-#### University Dashboard Module
+#### Education Intelligence Module
 ```python
 """
-University performance monitoring and analytics
-Location: src/components/university_dashboard.py (to be created)
+University performance monitoring, student success, and admissions analytics
+Location: src/components/education_intelligence_simple.py
 """
 
-class UniversityDashboard:
-    def __init__(self):
-        self.data = self.load_university_data()
-    
-    def load_university_data(self) -> pd.DataFrame:
-        """Load university performance data"""
-        
-    def calculate_kpis(self, filtered_data: pd.DataFrame) -> dict:
-        """Calculate key performance indicators"""
-        
-    def generate_trends(self, data: pd.DataFrame) -> dict:
-        """Analyze enrollment and retention trends"""
-        
-    def departmental_analysis(self, data: pd.DataFrame) -> dict:
-        """Perform department-level analysis"""
+def render_education_intelligence():
+    """Main renderer for education intelligence module"""
+
+def generate_education_data() -> dict:
+    """Generate reproducible student cohorts, enrollment trends, and program data"""
+
+def render_student_success_dashboard(education_data: dict, focus_area: str):
+    """Render student cohort metrics, retention distribution, and GPA analytics"""
+
+def render_academic_performance_analytics(education_data: dict, time_period: str):
+    """Render longitudinal enrollment trends and departmental breakdown"""
+
+def render_institutional_intelligence(education_data: dict):
+    """Render resource allocation, faculty ratios, and employment rates"""
 ```
 
-#### Visualization Comparison Module
+#### Visualization Excellence Module
 ```python
 """
-Data visualization best practices demonstration
-Location: src/components/visualization_comparison.py (to be created)
+Data visualization best practices demonstration and socioeconomic analytics
+Location: src/components/visualization_excellence_simple.py
 """
 
-class VisualizationComparison:
-    def __init__(self):
-        self.happiness_data = self.load_happiness_data()
-    
-    def load_happiness_data(self) -> pd.DataFrame:
-        """Load World Happiness Report data"""
-        
-    def create_poor_visualization(self) -> matplotlib.figure.Figure:
-        """Generate example of poor visualization practices"""
-        
-    def create_improved_visualization(self) -> matplotlib.figure.Figure:
-        """Generate example of improved visualization"""
-        
-    def statistical_analysis(self) -> dict:
-        """Perform correlation and regression analysis"""
+def render_visualization_excellence():
+    """Main renderer for visualization excellence framework"""
+
+def generate_visualization_data() -> dict:
+    """Generate global happiness, time series, and economic indicator datasets"""
+
+def render_design_principles_showcase(viz_data: dict, chart_style: str):
+    """Side-by-side comparison of ineffective vs. effective visualization design"""
+
+def render_statistical_excellence(viz_data: dict, viz_focus: str):
+    """Correlation, regression modeling, and distribution analyses"""
+
+def render_interactive_global_analytics(viz_data: dict):
+    """Geographic and regional comparative indicators"""
 ```
 
 ## Data Processing Pipeline
