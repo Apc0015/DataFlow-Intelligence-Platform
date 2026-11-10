@@ -75,15 +75,15 @@ class CSVValidator:
         # Remove placeholder values
         placeholder_values = ['xx', 'XX', 'N/A', 'n/a', 'NULL', 'null', '']
         for col in df_cleaned.columns:
-            if df_cleaned[col].dtype == 'object':
-                df_cleaned = df_cleaned[~df_cleaned[col].isin(placeholder_values)]
+            if df_cleaned[col].dtype == 'object' or pd.api.types.is_string_dtype(df_cleaned[col]):
+                df_cleaned = df_cleaned[~df_cleaned[col].astype(str).str.strip().isin(placeholder_values)]
         
         # Convert numeric columns
         if numeric_columns:
             for col in numeric_columns:
                 if col in df_cleaned.columns:
                     # Handle decimal comma notation
-                    if df_cleaned[col].dtype == 'object':
+                    if df_cleaned[col].dtype == 'object' or pd.api.types.is_string_dtype(df_cleaned[col]):
                         df_cleaned[col] = df_cleaned[col].astype(str).str.replace(',', '.')
                     
                     df_cleaned[col] = pd.to_numeric(df_cleaned[col], errors='coerce')
